@@ -8,10 +8,16 @@ export default () => ({
   app: {
     port: process.env.PORT,
     name: process.env.APP_ID,
-    email: "adedotunolawale@gmail.com",
-    JWT_SECRET: process.env.JWT_SECRET,
+    email: "adedotunolawale@gmail.com"
   },
   user: process.env.user,
+  jwt: {
+    secret: process.env.JWT_SECRET,
+    duration: process.env.TOKEN_LIFETIME as string,
+  },
+  kafka: {
+    endpoint: 'localhost:9092',
+  },
   db: {
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,

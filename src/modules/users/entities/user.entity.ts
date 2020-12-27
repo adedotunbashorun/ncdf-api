@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Company } from 'modules/companies/entities/company.entity';
+import { Entity, Column, PrimaryGeneratedColumn, OneToOne } from 'typeorm';
 
 @Entity()
 export class User {
@@ -12,7 +13,7 @@ export class User {
   lastName: string;
 
   @Column({
-
+    unique: true
   })
   email: string;
 
@@ -36,4 +37,7 @@ export class User {
 
   @Column('boolean')
   isActive: boolean;
+
+  @OneToOne(type => Company, company => company.userId)
+  company: Company;
 }

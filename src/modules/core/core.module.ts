@@ -8,6 +8,7 @@ import { SettingsModule } from '../settings/settings.module';
 import configuration from '../config/app.config';
 
 import CoreController from './core.controller';
+import QueueModule from './queues/queue.module';
 
 @Module({
   imports: [
@@ -17,7 +18,8 @@ import CoreController from './core.controller';
     }),
     TypeOrmModule.forRoot(),
     UsersModule, 
-    SettingsModule
+    SettingsModule,
+    QueueModule
   ],
   controllers: [CoreController],
   providers: [],
