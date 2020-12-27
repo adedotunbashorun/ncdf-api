@@ -18,7 +18,7 @@ export class User {
   email: string;
 
   @Column()
-  nogicUnique_id: string;
+  nogicUniqueId: string;
 
   @Column()
   nogicId: string;
